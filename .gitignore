@@ -1,0 +1,13 @@
+.classpath
+.project
+.settings
+**/.settings
+target/
+**/target
+*.class
+*.log
+*.war
+/data/**
+nbactions.xml
+/nbproject/
+node_modules/
