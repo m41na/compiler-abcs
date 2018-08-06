@@ -12,15 +12,11 @@ public class Interpreter {
         this.token = lexer.nextToken();
     }
 
-    public void error(String msg) {
-        throw new LexerException(msg);
-    }
-
     public void eat(TokenType type) {
         if (token.type.equals(type)) {
             token = lexer.nextToken();
         } else {
-            error("unexpected token type");
+            throw new RuntimeException("unexpected token type");
         }
     }
 
@@ -35,7 +31,7 @@ public class Interpreter {
             eat(TokenType.CPAREN);
             return result;
         }
-        throw new LexerException("unexpected token encountered");
+        throw new RuntimeException("unexpected token encountered");
     }
 
     public int term() {
